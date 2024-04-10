@@ -2,11 +2,24 @@ import XCTest
 @testable import BeBeTranslator
 
 final class BeBeTranslatorTests: XCTestCase {
-    func testExample() throws {
-        // XCTest Documentation
-        // https://developer.apple.com/documentation/xctest
-
-        // Defining Test Cases and Test Methods
-        // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
+    func testThatItLeavesTheSentenceUnchanged_GivenTheSentenceContainsNoCharactersToCypher()  {
+        let beBeTranslator = BeBeTranslator(cyphering: "a")
+        
+        XCTAssertEqual(beBeTranslator.translate("Peter"), "Peter")
+    }
+    
+    func testThatItShouldCypherUsingTheCharacter_GivenOnlyOneCypherChar() {
+        let bebeTranslator = BeBeTranslator(cyphering: "e")
+        XCTAssertEqual(bebeTranslator.translate("Peter"), "Pebeteber")
+    }
+    
+    func testThatItShouldUseAllChars_GivenMoreCypherCharactersAreGiven() {
+        let bebeTranslator = BeBeTranslator(cyphering: "ea")
+        XCTAssertEqual(bebeTranslator.translate("Peter Bauer"), "Pebeteber Babaueber")
+    }
+    
+    func testThatItShouldUseUpperAndLowerCaseBs_GivenUpperAndLowerCaseLettersToCypher() {
+        let bebeTranslator = BeBeTranslator(cyphering: "Pea")
+        XCTAssertEqual(bebeTranslator.translate("Peter Bauer"), "PBPebeteber Babaueber")
     }
 }
