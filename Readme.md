@@ -1,6 +1,6 @@
 # BeBe Translator
 
-![BeBe Translator Photo](BeBeTranslator.png)
+![BeBe Translator Photo](Translator.jpeg)
 ## Topics
 - Basic statements
 - Selections
