@@ -22,4 +22,9 @@ final class BeBeTranslatorTests: XCTestCase {
         let bebeTranslator = BeBeTranslator(cyphering: "Pea")
         XCTAssertEqual(bebeTranslator.translate("Peter Bauer"), "PBPebeteber Babaueber")
     }
+    
+    func testThatItTranslateTheReadmeExampleCorrectly() async throws {
+        let bebeTranslator = BeBeTranslator(cyphering: "ao")
+        XCTAssertEqual(bebeTranslator.translate("classroom"), "clabassroboobom")
+    }
 }
